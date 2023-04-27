@@ -1,0 +1,364 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #999999;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #999999;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #999999;
+}
+
+.alert-danger {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1001;
+}
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.7rem;
+}
+
+.header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 85px;
+  background: #fff;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 32px;
+  margin-right: 42px;
+}
+
+.advertise-line {
+  margin-top: 60px;
+  text-align: center;
+  color: #7A7A7A;
+  font-size: 15px;
+}
+
+#advertise-link {
+  color: #38A169;
+  text-decoration: underline;
+}
+
+#logo1 {
+  width: 161px;
+}
+
+#phone1 {
+  margin-left: 60px;
+  margin-top: 10px;
+  /* margin: auto; */
+  width: 80%;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 23px;
+  color: #222222;
+  margin-bottom: 60px;
+}
+
+.column1 {
+  float: left;
+  width: 50%;
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+}
+
+.container1 {
+  padding-left: 180px;
+  padding-top: 35px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+form {
+  /* This bit sets up the horizontal layout */
+  display:flex;
+  flex-direction:row;
+
+  /* I've used padding so you can see the edges of the elements. */
+  padding:1px;
+  border-radius: 20px;
+  border: 2px solid #d8d8d8;
+  width: 550px;
+}
+
+input {
+  /* Tell the input to use all the available space */
+  flex-grow:2;
+  /* And hide the input's outline, so the form looks like the outline */
+  border:none;
+  background: #fdfdfd;
+  max-width: 550px;
+  padding-left: 39px;
+  height: 90px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.1;
+  border-radius: 20px;
+}
+
+form:focus-within { 
+  outline: 1px solid #38A169;
+}
+
+/* remove the input focus blue box, it will be in the wrong place. */
+input:focus {
+  outline: none;
+}
+
+.subscribe-btn {
+  display: block;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 50px;
+  height: 80px;
+  background: #38A169;
+  color: white;
+  line-height: 1.5;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: all .12s;
+  box-shadow: none!important;
+}
+
+.subscribe-title {
+  display: none;
+}
+
+.subscribed-h1 {
+  font-weight: 800;
+  font-size: 3em;
+  color: #38A169;
+  text-align: center;
+}
+
+.subscribed-txt {
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #000000AB;
+  text-align: left;
+  display: inline-block;
+  line-height: 1.3em;
+  width: 70%;
+}
+
+.subscribed-main {
+  text-align: center;
+}
+
+.subscribed-logo {
+  width: 200px;
+  height: 80px;
+}
+
+
+/* Use a media query to add a breakpoint at 1200px: */
+@media screen and (max-width: 1200px) {
+  .column1 {
+    width: 100%;
+  }
+  .column2 {
+    display: none;
+  }
+  .container1 {
+  padding-left: 0;
+  padding-top: 35px;
+  margin: auto;
+  width: 50%;
+  }
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .column2 {
+    display: block;
+    width: 100%;
+    /* max-width: 320px; */
+  }
+
+  .subscribed-h1 {
+    margin-bottom: 15px;
+  }
+
+  .alert-danger {
+    width: 86%;
+  }
+
+  .subscribed-txt {
+  font-weight: 400;
+  font-size: 1.2em;
+  color: #000000AB;
+  text-align: left;
+  display: inline-block;
+  line-height: 1.3em;
+  width: 90%;
+  }
+
+  .subscribe-title {
+  display: block;
+  font-size: 22px;
+  line-height: 1.31818;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 15px;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #38A169;
+  opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #38A169;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #38A169;
+  }
+  
+  form {
+  /* This bit sets up the horizontal layout */
+  display:block;
+  /* flex-direction:row; */
+  /* I've used padding so you can see the edges of the elements. */
+  padding:1px;
+  border-radius: 20px;
+  border: unset;
+  width: 100%;
+  text-align: center;
+  }
+
+  form:focus-within { 
+  outline: none;
+  }
+  
+  input {
+  /* Tell the input to use all the available space */
+  flex-grow:2;
+  background: #fdfdfd;
+  max-width: 550px;
+  padding-left: 18px;
+  padding-right: 0;
+  height: 52px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.1;
+  border-radius: 10px;
+  border: 1px solid #d8d8d8;
+  margin-bottom: 20px;
+  width: 90%;
+  }
+
+  #phone1 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 100%;
+  }
+
+  .subscribe-btn {
+  display: block;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  height: 26px;
+  background: #38A169;
+  color: white;
+  /* line-height: 1.5; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: all .12s;
+  box-shadow: none!important;
+  max-width: 530px;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .container1 {
+  padding-left: 0;
+  padding-top: 0;
+  margin: unset;
+  width: unset;
+  }
+
+  .title {
+  font-size: 40px;
+  text-align: center;
+  }
+
+  .subtitle {
+  font-size: 18px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+  text-align: center;
+  max-width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #B9B9B9;
+  }
+
+  .logo {
+  margin-left: 10px;
+  margin-right: 42px;
+  }
+  
+}

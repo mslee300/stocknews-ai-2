@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<header class="header">
+  <a class="logo" href="/">
+    <img id="logo1" src="/static/img/logo.svg">
+  </a>
+</header>
+<div class="row">
+  <div class="column1">
+    <div class="container1">
+    <h1 class="title">
+      <span style="color:#38A169">AI-Curated</span> Stocknews<span style="color:#38A169">.</span>
+    </h1>
+      <h2 class="subtitle">
+        One email everyday, curated and summarized<br>in the hands of AI.
+      </h2>
+      <p class="subscribe-title">
+        Subscribe for Free
+      </p>
+        <form method="post">
+          {% csrf_token %}
+          <input type="text" name="email" placeholder="Your email address" required="" />
+          <a id="subscribe" href="{% url 'stocknewsai:index' %}">
+            <button class="subscribe-btn" onclick="disableButton()" type="submit"> Subscribe for free&nbsp;→</button>
+          </a>
+        </form>
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+          {% for field in form %}
+          {% if field.errors %}
+          <div>
+            <strong>{{ field.label }}</strong>
+            {{ field.errors }}
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+        <!-- 오류표시 End -->
+    </div>
+  </div>
+  <div class="column2">
+    <img id="phone1" src="/static/img/phone.png">
+  </div>
+</div>
+<p class="advertise-line">Want to advertise in Stocknews AI? <a id="advertise-link" href="mailto:minseok30086@gmail.com">Contact us</a></p>
+<br>
+
+<script type='text/javascript'>
+  function disableButton() {
+      // Disable link and change text color
+      document.getElementById("subscribe").style.pointerEvents = "none";
+  }
+</script>
+{% endblock %}
