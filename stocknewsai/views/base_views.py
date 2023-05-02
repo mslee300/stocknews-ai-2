@@ -43,8 +43,8 @@ def index(request):
           email.save()
           # Send a confirmation email
           user_email = form['email'].value()
-          # send_confirm_email(request, user_email)
-          send_stocknews_email(request, user_email)
+          send_confirm_email(request, user_email)
+          # send_stocknews_email(request, user_email)
         
           return redirect('/stocknewsai/subscribed')
   else:
